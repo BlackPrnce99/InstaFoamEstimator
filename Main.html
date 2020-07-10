@@ -1,0 +1,69 @@
+<script type="text/javascript" src="Main.js"></script>
+
+<form action="" id="instaFoamEstimator" onsubmit="return false">
+    <fieldset id="priceEstimator">
+        <legend>Estimate the Cost of Your Project</legend>
+
+        <label>Choose Your Foam Type</label>
+        <input type="radio" name="foamSelection" value="2lbs" onclick="calculateTotal()"> 2lbs, Closed-Cell
+        <input type="radio" name="foamSelection" value="1/2lbs" onclick="calculateTotal()">1/2lbs, Open-Cell
+
+        <div id="twoPoundFoamDepth">
+            <label>Choose the Depth You'd Like the Foam Applied</label>
+            <select id="twoPoundDepthSelection" name="twoPoundDepthSelection" onchange="calculateTotal()">
+                <option value="1 in">1"</option>
+                <option value="2 in">2"</option>
+                <option value="3 in">3"</option>
+                <option value="4 in">4"</option>
+            </select>>
+        </div>
+        
+
+        <label>Enter the Square Footage You'd Like Covered</label>
+        <input id="squareFootageSelection" name="squareFootageSelection" type="number" onchange="calculateTotal()">sq.
+        ft.
+
+    </fieldset>
+    <fieldset id="savingsEstimator">
+        <legend>Estimate Your Monthly Savings</legend>
+        <h4 id="savingsEstimatorSubtitle">Based on 10% savings for 1/2lbs and 17.5% savings for 2lbs. Assuming the
+            project is substantial enough to substantially increase the energy efficiency of the home.</h4>
+
+        <label>Currently Monthly Power Costs</label>
+        <input id="monthlyPower" type="number" onchange="calculateTotal()">
+
+    </fieldset>
+    <fieldset id="financingEstimator">
+        <legend>Estimate your Financing Costs</legend>
+        <label>Choose your Financing Option</label>
+        <select id="financingSelection" name="financingSelection" onchange="calculateTotal()">
+            <option value="6 Months @ 0%">6 Months - 0%</option>
+            <option value="12 Months @ 2%">12 Months - 2%</option>
+            <option value="18 Months @ 4%">18 Months - 4%</option>
+            <option value="24 Months @ 6%">24 Months - 6%</option>
+        </select>
+    </fieldset>
+</form>
+
+<div id="estimatorResultsBlock">
+    <div id="estimatorResultsBlock-Wrapper">
+        <div id="estimatorResultsBlock-Label">Total Cost</div>
+        <div id="estimatorResultsBlock-Value">0</div>
+    </div>
+    <div id="sqftCostResultsBlock-Wrapper">
+        <div id="sqftCostResultsBlock-Label">Cost Per Sq. Ft.</div>
+        <div id="sqftCostResultsBlock-Value">0</div>
+    </div>
+    <div id="savingsResultsBlock-Wrapper">
+        <div id="savingsResultsBlock-Label">Est. Monthly Savings</div>
+        <div id="savingsResultsBlock-Value">0</div>
+    </div>
+    <div id="rValueResultsBlock-Wrapper">
+        <div id="rValueResultsBlock-Label">Total R-Value</div>
+        <div id="rValueResultsBlock-Value">0</div>
+    </div>
+    <div id="financingResultsBlock-Wrapper">
+        <div id="financingResultsBlock-Label">Monthly Payments</div>
+        <div id="financingResultsBlock-Value">0</div>
+    </div>
+</div>
