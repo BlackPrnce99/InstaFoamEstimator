@@ -1,8 +1,78 @@
 //Setting up starting settings
 
 var formSettings = {
-    advanced: true,
-    advancedSurfaces: 3
+    advanced: false,
+    advancedSurfaces: 3,
+    moreInfoExpanded: false
+}
+
+//------------- Building out the swapEstimators() Function --------------
+
+function swapEstimators() {
+
+    // Toggling the "advanced?" setting.
+    formSettings.advanced = !formSettings.advanced;
+
+    //Getting the Simple and Advanced Elements.
+    var simpleItems = document.getElementsByClassName("simple");
+    var advancedItems = document.getElementsByClassName("advanced");
+
+    //Handling the swap from the simple estimator to the advanced one.
+    if (formSettings.advanced) {
+
+        //Turning the Simple Elements off
+        for (var i = 0; i < simpleItems.length; i++) {
+            simpleItems[i].style.display = "none";
+        }
+
+        //Turning the Advanced Elements on
+        for (var i = 0; i < advancedItems.length; i++) {
+            advancedItems[i].style.display = "block";
+        }
+    } else if (!formSettings.advanced) {
+
+        //Turning the Advanced Elements off
+        for (var i = 0; i < advancedItems.length; i++) {
+            advancedItems[i].style.display = "none";
+        }
+
+        //Turning the Simple Elements on
+        for (var i = 0; i < simpleItems.length; i++) {
+            simpleItems[i].style.display = "block";
+        }
+    }
+
+
+}
+
+//------------- Creating the "expandMoreInfo()" Function -------------
+
+function expandMoreInfo() {
+
+    // Toggling the "moreInfoExpanded" boolean in formSettings
+    formSettings.moreInfoExpanded = !formSettings.moreInfoExpanded;
+
+    //Getting the "More Info" elements and putting them into an array.
+    var foamMoreInfo = document.getElementsByClassName("resultsBlock-MoreInfoList");
+    
+
+    //Checking if the "More Info" section is being expanded.
+    if(formSettings.moreInfoExpanded) {
+
+        //If it is, then setting the display property to "flex"
+        for(var i = 0; i < foamMoreInfo.length; i++) {
+            foamMoreInfo[i].style.display = "flex"
+        }
+
+    } else if(!formSettings.moreInfoExpanded) {
+
+        //If not, then setting the display property to "none"
+        for(var i = 0; i < foamMoreInfo.length; i++) {
+            foamMoreInfo[i].style.display = "none"
+        }
+
+    }
+    
 }
 
 //------------- Calculating Foam Depths --------------
@@ -11,9 +81,6 @@ function calculateSpecificFoamTotals(targetFoam, targetRValue, targetSqFt, targe
     // Setting up HTML fields to target
     var depthField = targetBaseFieldToUpdate + targetFormBlock + "-Depth";
     var costField = targetBaseFieldToUpdate + targetFormBlock + "-Cost";
-
-    console.log(depthField);
-    console.log(document.getElementById(depthField));
 
     //Calculating the total required depth of foam and costs, based on the foam being used.
 
@@ -39,8 +106,10 @@ function calculateSpecificFoamTotals(targetFoam, targetRValue, targetSqFt, targe
         // Running the calculations for 1/2lbs foam cost ($0.25 / inch)
         totalCost = 0.25 * requiredDepth * targetSqFt;
     }
-    
 
+    console.log(targetRValue);
+    console.log(requiredDepth);
+    console.log(totalCost);
     //Assigning the cost and depth fields
     document.getElementById(depthField).innerHTML = requiredDepth + '\"';
     document.getElementById(costField).innerHTML = "$" + totalCost;
@@ -103,7 +172,7 @@ function calculateTotal() {
         var totalCost = 0;
 
         //Looping through all of the "advanced surface" fields, assigning their data, and adding their value to "totalCost"
-        for(var i = 0; i < formSettings.advancedSurfaces; i++) {
+        for (var i = 0; i < formSettings.advancedSurfaces; i++) {
 
             //Building out the identifier for each advanced surface form, so we can address the items inside of it.
             var FormNameTemplateComplete = "-Surface" + i;
@@ -112,10 +181,7 @@ function calculateTotal() {
             var targetRValue = mainForm.elements["rValueSelection" + FormNameTemplateComplete].value;
             var targetSqFt = mainForm.elements["squareFootageSelection" + FormNameTemplateComplete].value;
 
-            console.log(FormNameTemplateComplete);
-            console.log(foamSelected);
 
-            
             var surfaceCost = calculateSpecificFoamTotals(foamSelected, targetRValue, targetSqFt, "advancedOutput", FormNameTemplateComplete);
 
             totalCost += surfaceCost;

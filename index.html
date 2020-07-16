@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>InstaFoam Estimator</title>
+    <meta http-equiv="x-ua-compatible" content="ie-edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Style Sheet links -->
+    <link media="all" type="text/css" rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;800;900&display=swap" rel="stylesheet">
+
+    <!-- Script links -->
+    <script type="text/javascript" src="Simple.js"></script>
+
+</head>
+
+<body>
+
+    <form action="" id="instaFoamEstimator" onsubmit="return false">
+
+        <!-- The "Swap Estimator" button-->
+        <div id="swapEstimatorButton" onclick="swapEstimators()">Swap to Advanced (Multi-Surface) Estimator</div>
+
+        <!-- Building Out the Simple Estimator -->
+        <fieldset class="simple" id="priceEstimator-Simple">
+            <legend>Estimate your Project's Cost</legend>
+
+            <!-- Getting the square footage that the user wants covered -->
+            <div class="inputBlock">
+                <label>Total Square Footage</label>
+                <input id="squareFootageSelection" name="squareFootageSelection" type="number"
+                    onchange="calculateTotal()">
+            </div>
+
+
+            <!-- Getting the R-Value that the user wants-->
+            <div class="inputBlock">
+                <label>What final R-value do you need?</label>
+                <input type="number" name="rValueSelection" onchange="calculateTotal()">
+            </div>
+
+        </fieldset>
+
+        <!-- Building out the Advanced Estimator -->
+
+        <fieldset class="advanced" id="priceEstimator-Advanced">
+
+            <!-- The First Surface -->
+            <div class="advancedInputBlock" id="Surface0">
+
+                <div class="advancedInputs-Wrapper">
+                    <!-- Letting the user select their desired Sq. Ft -->
+                    <label>Surface Sq.Ft</label>
+                    <input type="number" id="squareFootageSelection-Surface0" name="squareFootageSelection-Surface0"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired R-Value -->
+                    <label>Target R-Value</label>
+                    <input type="number" id="rValueSelection-Surface0" name="rValueSelection-Surface0"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired Foam -->
+                    <div class="radioButton-Wrapper">
+                        <label>2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface0" value="2lb" onchange="calculateTotal()">
+                        <label>1/2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface0" value="1/2lb" onchange="calculateTotal()">
+                    </div>
+                </div>
+
+                <!-- Outputs the Required Depth to the User-->
+                <div class="advancedResults-Wrapper">
+                    <div class="advancedResultsBlock-Wrapper left">
+                        <div class="resultsBlock-SubTitle subtitle">Depth:</div>
+                        <div class="resultBlock-Value" id="advancedOutput-Surface0-Depth">0"</div>
+                    </div>
+
+                    <!-- Outputs the Price to the User-->
+                    <div class="advancedResultsBlock-Wrapper">
+                        <div class="resultsBlock-SubTitle subtitle">Cost:</div>
+                        <div class="resultsBlock-Value" id="advancedOutput-Surface0-Cost">$0</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- The Second Surface -->
+            <div class="advancedInputBlock" id="Surface1">
+                <div class="advancedInputs-Wrapper">
+                    <!-- Letting the user select their desired Sq. Ft -->
+                    <label>Surface Sq.Ft</label>
+                    <input type="number" id="squareFootageSelection-Surface1" name="squareFootageSelection-Surface1"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired R-Value -->
+                    <label>Target R-Value</label>
+                    <input type="number" id="rValueSelection-Surface1" name="rValueSelection-Surface1"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired Foam -->
+                    <div class="radioButton-Wrapper">
+                        <label>2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface1" value="2lb" onchange="calculateTotal()">
+                        <label>1/2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface1" value="1/2lb" onchange="calculateTotal()">
+                    </div>
+                </div>
+
+                <!-- Outputs the Required Depth to the User-->
+                <div class="advancedResults-Wrapper">
+                    <div class="advancedResultsBlock-Wrapper left">
+                        <div class="resultsBlock-SubTitle subtitle">Depth:</div>
+                        <div class="resultBlock-Value" id="advancedOutput-Surface1-Depth">0"</div>
+                    </div>
+
+                    <!-- Outputs the Price to the User-->
+                    <div class="advancedResultsBlock-Wrapper">
+                        <div class="resultsBlock-SubTitle subtitle">Cost:</div>
+                        <div class="resultsBlock-Value" id="advancedOutput-Surface1-Cost">$0</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- The Third Surface -->
+            <div class="advancedInputBlock" id="Surface2">
+
+                <div class="advancedInputs-Wrapper">
+                    <!-- Letting the user select their desired Sq. Ft -->
+                    <label>Surface Sq.Ft</label>
+                    <input type="number" id="squareFootageSelection-Surface2" name="squareFootageSelection-Surface2"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired R-Value -->
+                    <label>Target R-Value</label>
+                    <input type="number" id="rValueSelection-Surface2" name="rValueSelection-Surface2"
+                        onchange="calculateTotal()">
+
+                    <!-- Letting the user select their desired Foam -->
+                    <div class="radioButton-Wrapper">
+                        <label>2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface2" value="2lb" onchange="calculateTotal()">
+                        <label>1/2lbs Foam</label>
+                        <input type="radio" name="foamSelection-Surface2" value="1/2lb" onchange="calculateTotal()">
+                    </div>
+                </div>
+                <!-- Outputs the Required Depth to the User-->
+                <div class="advancedResults-Wrapper">
+                    <div class="advancedResultsBlock-Wrapper left">
+                        <div class="resultsBlock-SubTitle subtitle">Depth:</div>
+                        <div class="resultBlock-Value" id="advancedOutput-Surface2-Depth">0"</div>
+                    </div>
+
+                    <!-- Outputs the Price to the User-->
+                    <div class="advancedResultsBlock-Wrapper">
+                        <div class="resultsBlock-SubTitle subtitle">Cost:</div>
+                        <div class="resultsBlock-Value" id="advancedOutput-Surface2-Cost">$0</div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+
+        <!-- 
+    </fieldset>
+    <fieldset id="savingsEstimator">
+        <legend>Estimate Your Monthly Savings</legend>
+        <h4 id="savingsEstimatorSubtitle">Based on 10% savings for 1/2lbs and 17.5% savings for 2lbs. Assuming the
+            project is substantial enough to substantially increase the energy efficiency of the home.</h4>
+
+        <label>Currently Monthly Power Costs</label>
+        <input id="monthlyPower" type="number" onchange="calculateTotal()">
+
+    </fieldset>
+    -->
+
+        <!-- Building out the Financing Estimator Section-->
+        <fieldset id="financingEstimator">
+
+            <legend>Estimate your Monthly Payments</legend>
+
+            <div class="inputBlock">
+                <label>Choose your Financing Option</label>
+                <select id="financingSelection" name="financingSelection" onchange="calculateTotal()">
+                    <option value="6 Months @ 2%">6 Months - 2%</option>
+                    <option value="12 Months @ 4%">12 Months - 4%</option>
+                    <option value="18 Months @ 6%">18 Months - 6%</option>
+                    <option value="24 Months @ 8%">24 Months - 8%</option>
+                </select>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <!-- Building out the dashboard at the bottom of the screen -->
+    <div class="resultBlock">
+        <div class="simpleResultBlock simple" id="estimatorResultsBlock-Simple">
+
+            <!-- Showing the price and depth of 2lb foam, and displaying a "more info" drop-down arrow -->
+
+            <div id="resultsBlock-ByFoamBreakdown-Wrapper">
+
+                <div class="resultsBlock-Wrapper" id="simpleResultTwoPound-Wrapper">
+
+                    <div class="resultsBlock-FoamWrapper">
+                        <div class="resultsBlock-Title title" id="simpleResultTwoPound-Title">2lb Foam</div>
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Depth: </div>
+                            <div class="resultsBlock-Value" id="simpleResultTwoPound-Depth">0"</div>
+                        </div>
+
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
+                            <div class="resultsBlock-Value" id="simpleResultTwoPound-Cost">$0</div>
+                        </div>
+
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
+                            <div class="resultsBlock-Value" id="simpleResultTwoPound-MonthlyPayments">$0</div>
+                        </div>
+                    </div>
+
+                    <!-- More information on the selected foam. (Initially hidden) -->
+                    <ul class="resultsBlock-MoreInfoList" id="simpleResultTwoPound-MoreInfoList">
+                        <li>Data Point 1</li>
+                        <li>Data Point 2</li>
+                        <li>Data Point 3</li>
+                        <li>Data Point 4</li>
+                    </ul>
+                </div>
+
+                <!-- Showing the price and depth of 1/2lb foam, and displaying a "more info" drop-down arrow -->
+                <div class="resultsBlock-Wrapper" id="simpleResultHalfPound-Wrapper">
+                    <div class="resultsBlock-FoamWrapper">
+                        <div class="resultsBlock-Title title" id="simpleResultHalfPound-Title">1/2lb Foam</div>
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Depth: </div>
+                            <div class="resultsBlock-Value" id="simpleResultHalfPound-Depth">0"</div>
+                        </div>
+
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
+                            <div class="resultsBlock-Value" id="simpleResultHalfPound-Cost">$0</div>
+                        </div>
+
+                        <div class="resultsBlock-ValueWrapper">
+                            <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
+                            <div class="resultsBlock-Value" id="simpleResultHalfPound-MonthlyPayments">$0</div>
+                        </div>
+                    </div>
+
+                    <!-- More information on the selected foam. (Initially hidden) -->
+                    <ul class="resultsBlock-MoreInfoList" id="simpleResultHalfPound-MoreInfoList">
+                        <li>Data Point 1</li>
+                        <li>Data Point 2</li>
+                        <li>Data Point 3</li>
+                        <li>Data Point 4</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- The "More Info" Arrow -->
+            <div id="simpleResultsBlock-MoreInfoWrapper" onclick="expandMoreInfo()">
+                <div id="simpleResultsBlock-MoreIntoTitle">More Info</div>
+                <div id="simpleResultsBlock-MoreInfoArrow"></div>
+            </div>
+
+
+
+        </div>
+
+        <!-- Bottom-of-Page readout for the advanced estimator -->
+        <div class="advancedResultBlock advanced" id="estimatorResultsBlock-Advanced">
+
+            <!-- Showing the projects entire costs, as well as the monthly payments -->
+            <div class="resultsBlock- title" id="advancedResultBlock-Title">Project Costs</div>
+
+            <div class="resultsBlock-ValueWrapper">
+                <div class="resultsBlock-ValueLabel">Cost: </div>
+                <div class="resultsBlock-Value" id="advancedResultBlock-Cost">$0</div>
+            </div>
+
+            <div class="resultsBlock-ValueWrapper">
+                <div class="resultsBlock-ValueLabel">Monthly: </div>
+                <div class="resultsBlock-Value" id="advancedResultBlock-MonthlyPayments">$0</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
