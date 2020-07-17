@@ -3,7 +3,8 @@
 var formSettings = {
     advanced: false,
     advancedSurfaces: 3,
-    moreInfoExpanded: false
+    moreInfoExpanded: false,
+    areasShowing: 1
 }
 
 //------------- Building out the swapEstimators() Function --------------
@@ -29,6 +30,10 @@ function swapEstimators() {
         for (var i = 0; i < advancedItems.length; i++) {
             advancedItems[i].style.display = "block";
         }
+
+        //Swapping the text on the "Swap Estimator" button
+        //document.getElementById("swapEstimatorButton").innerHTML = "Swap to Simple Estimator";
+
     } else if (!formSettings.advanced) {
 
         //Turning the Advanced Elements off
@@ -40,13 +45,87 @@ function swapEstimators() {
         for (var i = 0; i < simpleItems.length; i++) {
             simpleItems[i].style.display = "block";
         }
+
+        //Swapping the text on the "Swap Estimator" button
+        //document.getElementById("swapEstimatorButton").innerHTML = "Swap to Advanced (Multi-Surface) Estimator";
     }
 
 
 }
 
+//------------- Creating the "addSurface()" Function ---------------
+
+function addSurface() {
+
+    //Finding out how many areas are showing, and then revealing the next one.
+    var surfaceToAdd = "surface" + formSettings.areasShowing;
+
+    formSettings.areasShowing++;
+
+    document.getElementById(surfaceToAdd).style.display = "block";
+}
+
+//-------------- Creating the Small "moreInfo()" Dashboard Funcation -------------
+
+function toggleMoreInfo() {
+
+    //Toggling the "moreInfoExpanded" setting.
+    formSettings.moreInfoExpanded = !formSettings.moreInfoExpanded;
+
+    //Toggling "More info" Elements ON, and turning OFF Quick-Look Dashboard
+    if (formSettings.moreInfoExpanded) {
+
+        var elementsToShow = document.getElementsByClassName("moreDetailsShow");
+        var elementsToHide = document.getElementsByClassName("moreDetailsHide");
+
+        for (var i = 0; i < elementsToShow.length; i++) {
+            console.log(i);
+            elementsToShow[i].style.display = "flex";
+
+        }
+
+        for (var i = 0; i < elementsToHide.length; i++) {
+            console.log(i);
+            elementsToHide[i].style.display = "none";
+
+        }
+
+        var buttons = document.getElementsByClassName("clickForMoreText");
+        
+        for(var i = 0; i < buttons.length; i++) {
+            buttons[i].innerHTML = "(Click for Less)";
+        }
+
+    //Toggling "More info" Elements OFF, and turning ON Quick-Look Dashboard
+    } else if (!formSettings.moreInfoExpanded) {
+
+        var elementsToShow = document.getElementsByClassName("moreDetailsShow");
+        var elementsToHide = document.getElementsByClassName("moreDetailsHide");
+
+        for (var i = 0; i < elementsToShow.length; i++) {
+            console.log(i);
+            elementsToShow[i].style.display = "none";
+
+        }
+
+        for (var i = 0; i < elementsToHide.length; i++) {
+            console.log(i);
+            elementsToHide[i].style.display = "flex";
+
+        }
+
+        var buttons = document.getElementsByClassName("clickForMoreText");
+        
+        for(var i = 0; i < buttons.length; i++) {
+            buttons[i].innerHTML = "(Click for More)";
+        }
+    }
+}
+
+
 //------------- Creating the "expandMoreInfo()" Function -------------
 
+/*
 function expandMoreInfo() {
 
     // Toggling the "moreInfoExpanded" boolean in formSettings
@@ -74,6 +153,7 @@ function expandMoreInfo() {
     }
     
 }
+*/
 
 //------------- Calculating Foam Depths --------------
 function calculateSpecificFoamTotals(targetFoam, targetRValue, targetSqFt, targetBaseFieldToUpdate, targetFormBlock = "") {
@@ -137,7 +217,7 @@ function calculateMonthlyPayments(totalCost, financingSelection, targetBaseField
 
     //Calculating the Monthly Payments
     var r = (financingRate / 12)
-    var monthlyPayments = totalCost / ((((1 + r) ** months) - 1) / (r * (r + 1) ** months));
+    var monthlyPayments = (totalCost / ((((1 + r) ** months) - 1) / (r * (r + 1) ** months))).toFixed(2);
 
     //Assigning the monthly payment fields
     document.getElementById(monthlyPaymentField).innerHTML = "$" + monthlyPayments;
@@ -165,6 +245,10 @@ function calculateTotal() {
 
         calculateMonthlyPayments(twoPoundCost, financingSelection, "simpleResultTwoPound");
         calculateMonthlyPayments(halfPoundCost, financingSelection, "simpleResultHalfPound");
+
+        //Displaying the Foam Costs in the "Quick Display"
+        document.getElementById("simpleResultBlockTwoPoundQuick-Cost").innerHTML = "$" + twoPoundCost;
+        document.getElementById("simpleResultBlockHalfPoundQuick-Cost").innerHTML = "$" + halfPoundCost;
 
     } else if (formSettings.advanced === true) {
 
