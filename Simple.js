@@ -1,8 +1,8 @@
 //Setting up starting settings
 
 var formSettings = {
-    advanced: false,
-    advancedSurfaces: 3,
+    advanced: true,
+    advancedSurfaces: 5,
     moreInfoExpanded: false,
     areasShowing: 1
 }
@@ -253,30 +253,44 @@ function calculateTotal() {
     } else if (formSettings.advanced === true) {
 
         //Basic variables
-        var totalCost = 0;
+        var twoPoundTotalCost = 0;
+        var halfPoundTotalCost = 0;
 
         //Looping through all of the "advanced surface" fields, assigning their data, and adding their value to "totalCost"
         for (var i = 0; i < formSettings.advancedSurfaces; i++) {
 
             //Building out the identifier for each advanced surface form, so we can address the items inside of it.
             var FormNameTemplateComplete = "-Surface" + i;
+            console.log(FormNameTemplateComplete);
 
-            var foamSelected = mainForm.elements["foamSelection" + FormNameTemplateComplete].value;
+            //var foamSelected = mainForm.elements["foamSelection" + FormNameTemplateComplete].value;
             var targetRValue = mainForm.elements["rValueSelection" + FormNameTemplateComplete].value;
             var targetSqFt = mainForm.elements["squareFootageSelection" + FormNameTemplateComplete].value;
 
+            console.log(targetRValue + "!!!");
+            console.log(targetSqFt + "!!!");
 
-            var surfaceCost = calculateSpecificFoamTotals(foamSelected, targetRValue, targetSqFt, "advancedOutput", FormNameTemplateComplete);
+            //Displaying the Quick, Area-Specific Results
+            var twoPoundSurfaceCost = calculateSpecificFoamTotals("2lb", targetRValue, targetSqFt, "advancedOutputTwoPound", FormNameTemplateComplete);
+            var halfPoundSurfaceCost = calculateSpecificFoamTotals("1/2lb", targetRValue, targetSqFt, "advancedOutputHalfPound", FormNameTemplateComplete);
 
-            totalCost += surfaceCost;
+            //Adding the results of Each card to the running total
+            twoPoundTotalCost += twoPoundSurfaceCost;
+            halfPoundTotalCost += halfPoundSurfaceCost;
 
         }
 
+        
         //Calculating and assigning the estimated monthly costs output
-        calculateMonthlyPayments(totalCost, financingSelection, "advancedResultBlock");
+        calculateMonthlyPayments(twoPoundTotalCost, financingSelection, "simpleResultTwoPound");
+        calculateMonthlyPayments(halfPoundTotalCost, financingSelection, "simpleResultHalfPound");
 
-        //Assinging the total cost output
-        document.getElementById("advancedResultBlock-Cost").innerHTML = "$" + totalCost;
+        //Assinging the total cost outputs
+        document.getElementById("simpleResultBlockTwoPoundQuick-Cost").innerHTML = "$" + twoPoundTotalCost;
+        document.getElementById("simpleResultBlockHalfPoundQuick-Cost").innerHTML = "$" + halfPoundTotalCost;
+
+        document.getElementById("simpleResultTwoPound-Cost").innerHTML = "$" + twoPoundTotalCost;
+        document.getElementById("simpleResultHalfPound-Cost").innerHTML = "$" + halfPoundTotalCost;
     }
 
 
