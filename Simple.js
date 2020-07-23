@@ -223,7 +223,7 @@ function calculateMonthlyPayments(totalCost, financingSelection, targetBaseField
     document.getElementById(monthlyPaymentField).innerHTML = "$" + monthlyPayments;
 }
 
-//------------- Main "calculateTotals()" Function --------------
+//------------- MAIN "calculateTotals()" Function --------------
 
 function calculateTotal() {
 
@@ -294,4 +294,35 @@ function calculateTotal() {
     }
 
 
+}
+
+//-------------------Submitting Email Form---------------------
+function submitEmail() {
+    //Getting the user's email information.
+    const mainForm = document.forms["emailCollection-Form"];
+    const userEmail = mainForm.elements["emailCollection-Input"].value;
+    const wantsToConnect = mainForm.elements["emailCollection-WantsEstimate"].checked;
+
+    const allOptions = {
+        email : userEmail,
+        wantsConnect : wantsToConnect
+    }
+
+    fetch('http://localhost:3000/test', {
+        method: "POST",
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({
+            user: {
+                name: "John",
+                email: "test@test.com"
+            }
+        })
+    })
+        .then(results => results.json())
+        .then(results => {
+            console.log(results);
+        })
+    
 }

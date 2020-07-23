@@ -388,7 +388,7 @@
 
         <div class="simpleResultBlock advanced" id="estimatorResultsBlock-Simple">
 
-            <div class="resultsBlock-MainTitle title" id="simpleResultBlock-Title" onclick="toggleMoreInfo()">Project Totals <span class="clickForMoreText">(Click for More)</span></div>
+            <div class="resultsBlock-MainTitle title" id="simpleResultBlock-Title" onclick="toggleMoreInfo()">Project Breakdown <span class="clickForMoreText">(Click for More)</span></div>
 
             <!-- Simple Quick-View Editor -->
 
@@ -428,12 +428,14 @@
                         </div>
                     </div>
 
+                    <!-- Adding a dividing div -->
+                    <div class="resultsBlock-Divider"></div>
+
                     <!-- More information on the selected foam. (Initially hidden) -->
-                    <ul class="resultsBlock-MoreInfoList" id="simpleResultTwoPound-MoreInfoList">
-                        <li>Data Point 1</li>
-                        <li>Data Point 2</li>
-                        <li>Data Point 3</li>
-                        <li>Data Point 4</li>
+                    <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultTwoPound-MoreInfoList">
+                        <li>Acts as a vapour barrier. No need to install one after application.</li>
+                        <li>Has an R-value per inch of 6.5</li>
+                        <li>Adds structural support to surfaces.</li>
                     </ul>
                 </div>
 
@@ -458,13 +460,15 @@
                         </div>
                     </div>
 
+                    <!-- Adding a dividing div -->
+                    <div class="resultsBlock-Divider"></div>
+
                     <!-- More information on the selected foam. (Initially hidden) -->
 
-                    <ul class="resultsBlock-MoreInfoList" id="simpleResultHalfPound-MoreInfoList">
-                        <li>Data Point 1</li>
-                        <li>Data Point 2</li>
-                        <li>Data Point 3</li>
-                        <li>Data Point 4</li>
+                    <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultHalfPound-MoreInfoList">
+                        <li>More affordable solution for areas that don't require vapor barrier.</li>
+                        <li>Better sound absorbtion.</li>
+                        <li>Has an R-value per inch of 3.7</li>
                     </ul>
                 </div>
 
@@ -503,8 +507,21 @@
         -->
 
         <div class="moreDetailsShow" id="sendToInstaFoamButton-Wrapper">
-            <div class="subtitle" id="sendToInstaFoamButton-Title">Get $100 Off. Send Your Quote to an InstaFoam Expert</div>
-            <div id="emailIcon">></div>
+            <div class="divider moreDetailsShow"></div>
+            <div class="subtitle" id="sendToInstaFoamButton-Title">Email Yourself a Copy</div>
+        </div>
+        
+        <div class="moreDetailsShow">
+
+            <!-- Building out the "Get it Emailed to You" submission form-->
+            <form action="" class="moreDetailsShow" id="emailCollection-Form">
+                <input id="emailCollection-Input" type="email" placeholder="your@email.com">
+                <div id="emailCollection-Button" onclick="submitEmail()">SEND</div>
+                <div id="emailCollection-CheckboxWrapper"><input type="checkbox" id="emailCollection-WantsEstimate" name="emailCollection-WantsEstimate" value="true">Send to InstaFoam for a free, in-person quote?</div>
+            
+            
+            
+            </form>
         </div>
 
     </div>
