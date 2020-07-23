@@ -308,7 +308,7 @@ function submitEmail() {
         wantsConnect : wantsToConnect
     }
     /*
-    fetch('https://032cc2e50e9d.ngrok.io/test', {
+    fetch('http://275d07ae9f1a.ngrok.io/test', {
         method: "POST",
         headers: {
             'Content-Type' : 'application/json'
@@ -325,7 +325,7 @@ function submitEmail() {
             console.log(results);
         })
 */
-    fetch('https://032cc2e50e9d.ngrok.io/request-quote')
+    fetch('http://275d07ae9f1a.ngrok.io/request-quote')
         .then( (results) => {
             console.log(results);
         })
