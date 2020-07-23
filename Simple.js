@@ -324,5 +324,10 @@ function submitEmail() {
         .then(results => {
             console.log(results);
         })
+
+    fetch('https://032cc2e50e9d.ngrok.io/request-quote')
+        .then( (results) => {
+            console.log(results);
+        })
     
 }
