@@ -325,7 +325,7 @@ function submitEmail() {
             console.log(results);
         })
 */
-    fetch('http://275d07ae9f1a.ngrok.io/request-quote')
+    fetch('https://275d07ae9f1a.ngrok.io/request-quote')
         .then( (results) => {
             console.log(results);
         })
