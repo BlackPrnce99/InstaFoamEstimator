@@ -307,7 +307,7 @@ function submitEmail() {
         email : userEmail,
         wantsConnect : wantsToConnect
     }
-    /*
+    
     fetch('http://275d07ae9f1a.ngrok.io/test', {
         method: "POST",
         headers: {
@@ -324,10 +324,10 @@ function submitEmail() {
         .then(results => {
             console.log(results);
         })
-*/
+/*
     fetch('https://275d07ae9f1a.ngrok.io/request-quote')
         .then( (results) => {
             console.log(results);
         })
-
+*/
 }
