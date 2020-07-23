@@ -307,11 +307,11 @@ function submitEmail() {
         email : userEmail,
         wantsConnect : wantsToConnect
     }
-    /*
+    
     fetch('https://032cc2e50e9d.ngrok.io/test', {
         method: "POST",
         headers: {
-            'Content-Type' : 'application/json'
+            'Content-Type' : 'text/plain'
         },
         body: JSON.stringify({
             user: {
@@ -324,10 +324,10 @@ function submitEmail() {
         .then(results => {
             console.log(results);
         })
-*/
+/*
     fetch('https://032cc2e50e9d.ngrok.io/request-quote')
         .then( (results) => {
             console.log(results);
         })
-    
+    */
 }
