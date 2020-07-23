@@ -308,7 +308,7 @@ function submitEmail() {
         wantsConnect : wantsToConnect
     }
 
-    fetch('http://032cc2e50e9d.ngrok.io', {
+    fetch('https://032cc2e50e9d.ngrok.io', {
         method: "POST",
         headers: {
             'Content-Type' : 'application/json'
