@@ -311,7 +311,7 @@ function submitEmail() {
     fetch('https://032cc2e50e9d.ngrok.io/test', {
         method: "POST",
         headers: {
-            'Content-Type' : 'text/plain'
+            'Content-Type' : 'application/json'
         },
         body: JSON.stringify({
             user: {
