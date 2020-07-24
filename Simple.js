@@ -320,7 +320,7 @@ function submitEmail() {
             }
         })
     })
-        .then(results => results.json())
+        .then((results) => results.json())
         .then(results => {
             console.log(results);
         })
