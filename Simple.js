@@ -313,16 +313,16 @@ function submitEmail() {
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify({
-            user: {
-                name: "John",
-                email: "test@test.com"
-            }
-        })
+        body: JSON.stringify(allOptions)
     })
         .then((results) => results.json())
         .then(results => {
-            console.log(results);
+            if(results.success) {
+                console.log("Thanks!");
+            };
+        })
+        .catch( () => {
+            console.log("Nope");
         })
 /*
     fetch('https://275d07ae9f1a.ngrok.io/request-quote')
