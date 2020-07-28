@@ -232,7 +232,7 @@ ul {
 
 .resultBlock {
   position: fixed;
-  bottom: 0px;
+  bottom: 65px;
   width: 100%;
   max-width: 490px;
   padding-top: 10px;
