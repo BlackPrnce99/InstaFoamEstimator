@@ -239,7 +239,7 @@ ul {
 
 .resultBlock {
   position: absolute;
-  bottom: 45px;
+  bottom: 0px;
   width: 100%;
   max-width: 490px;
   padding-top: 10px;
