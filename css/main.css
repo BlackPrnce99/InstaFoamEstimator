@@ -9,6 +9,7 @@ body {
 #main-wrapper {
   position: absolute;
   max-height: 100vh;
+  background-color: pink;
   overflow: scroll; }
 
 /*
