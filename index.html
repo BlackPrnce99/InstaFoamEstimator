@@ -17,16 +17,18 @@
 
 <body>
 
-    <form action="" id="instaFoamEstimator" onsubmit="return false">
+    <div id="main-wrapper">
 
-        <h1>InstaFoam Spray-Foam Estimator</h1>
-        <p id="paragraph1">Calculate the cost of your next project with this step-by-step estimator.</p>
+        <form action="" id="instaFoamEstimator" onsubmit="return false">
 
-        <!-- The "Swap Estimator" button-->
-        <!--<div id="swapEstimatorButton" onclick="swapEstimators()">Swap to Advanced (Multi-Surface) Estimator</div>-->
+            <h1>InstaFoam Spray-Foam Estimator</h1>
+            <p id="paragraph1">Calculate the cost of your next project with this step-by-step estimator.</p>
+
+            <!-- The "Swap Estimator" button-->
+            <!--<div id="swapEstimatorButton" onclick="swapEstimators()">Swap to Advanced (Multi-Surface) Estimator</div>-->
 
 
-        <!-- The Old "Advanced Estimator" button block
+            <!-- The Old "Advanced Estimator" button block
         <legend>Step 1). Choose Your Estimator</legend>
 
         <div class="inputBlock" id="advancedButtonWrapperBlock">
@@ -51,7 +53,7 @@
         -->
 
 
-        <!-- Old Simple Estimator
+            <!-- Old Simple Estimator
         <fieldset class="simple" id="priceEstimator-Simple">
             <legend>Step 2). Estimate Costs</legend>
 
@@ -70,38 +72,39 @@
             </div>
         -->
 
-        </fieldset>
+            </fieldset>
 
-        <!-- Building out the Advanced Estimator -->
+            <!-- Building out the Advanced Estimator -->
 
-        <fieldset class="advanced" id="priceEstimator-Advanced">
+            <fieldset class="advanced" id="priceEstimator-Advanced">
 
-            <legend>Step 1). Estimate Costs</legend>
+                <legend>Step 1). Estimate Costs</legend>
 
-            <!-- The First Surface -->
-            <div id="surface0">
-                <h3 class="areaTag">Area 1</h3>
-                <div class="advancedInputBlock" id="Surface0">
-    
-                    <div class="advancedInputs-Wrapper">
-                        <!-- Letting the user select their desired Sq. Ft -->
-                        <label>Surface Sq.Ft</label>
-                        <input type="number" id="squareFootageSelection-Surface0" name="squareFootageSelection-Surface0" placeholder = "L x W" onchange="calculateTotal()">
-    
-                        <!-- Letting the user select their desired R-Value -->
-                        <label>Type of Surface (Target R-Value)</label>
-                        <select list="r-values" type="number" id="rValueSelection-Surface0" name="rValueSelection-Surface0"
-                            onchange="calculateTotal()">
-                            <option value = 17.5>Wall (R-17.5)</option>
-                            <option value = 59.0>Attic Ceiling (R-59.0)</option>
-                            <option value = 28.5>Cathedral Ceiling (R-28.5)</option>
-                            <option value = 28.5>Floor Over Unheated Area (R-28.5)</option>
-                            <option value = 19.6>Foundation Walls (R-19.6)</option>
-                            <option value = 21.1>Slab on Grade (R-21.2)</option>
-                        </select>
-    
-                        <!-- Letting the user select their desired Foam -->
-                        <!--
+                <!-- The First Surface -->
+                <div id="surface0">
+                    <h3 class="areaTag">Area 1</h3>
+                    <div class="advancedInputBlock" id="Surface0">
+
+                        <div class="advancedInputs-Wrapper">
+                            <!-- Letting the user select their desired Sq. Ft -->
+                            <label>Surface Sq.Ft</label>
+                            <input type="number" id="squareFootageSelection-Surface0"
+                                name="squareFootageSelection-Surface0" placeholder="L x W" onchange="calculateTotal()">
+
+                            <!-- Letting the user select their desired R-Value -->
+                            <label>Type of Surface (Target R-Value)</label>
+                            <select list="r-values" type="number" id="rValueSelection-Surface0"
+                                name="rValueSelection-Surface0" onchange="calculateTotal()">
+                                <option value=17.5>Wall (R-17.5)</option>
+                                <option value=59.0>Attic Ceiling (R-59.0)</option>
+                                <option value=28.5>Cathedral Ceiling (R-28.5)</option>
+                                <option value=28.5>Floor Over Unheated Area (R-28.5)</option>
+                                <option value=19.6>Foundation Walls (R-19.6)</option>
+                                <option value=21.1>Slab on Grade (R-21.2)</option>
+                            </select>
+
+                            <!-- Letting the user select their desired Foam -->
+                            <!--
                         <div class="radioButton-Wrapper">
                             <label>2lbs Foam</label>
                             <input type="radio" name="foamSelection-Surface0" value="2lb" onchange="calculateTotal()">
@@ -109,199 +112,202 @@
                             <input type="radio" name="foamSelection-Surface0" value="1/2lb" onchange="calculateTotal()">
                         </div>
                         -->
-                    </div>
-                    
-    
-                    <!-- Outputs the Required Depth to the User-->
-                    <div class="advancedResults-Wrapper">
-                        <div class="advancedResultsBlock-Wrapper left">
-                            <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface0-Cost">$0</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface0-Depth">0"</div>
                         </div>
-    
-                        <!-- Outputs the Price to the User-->
-                        <div class="advancedResultsBlock-Wrapper">
-                            <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface0-Cost">$0</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface0-Depth">0"</div>
+
+
+                        <!-- Outputs the Required Depth to the User-->
+                        <div class="advancedResults-Wrapper">
+                            <div class="advancedResultsBlock-Wrapper left">
+                                <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface0-Cost">$0</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface0-Depth">0"</div>
+                            </div>
+
+                            <!-- Outputs the Price to the User-->
+                            <div class="advancedResultsBlock-Wrapper">
+                                <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface0-Cost">$0</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface0-Depth">0"</div>
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
 
-            <div id="surface1">
-                <h3 class="areaTag">Area 2</h3>
-                <div class="advancedInputBlock" id="Surface1">
-    
-                    <div class="advancedInputs-Wrapper">
-                        <!-- Letting the user select their desired Sq. Ft -->
-                        <label>Surface Sq.Ft</label>
-                        <input type="number" id="squareFootageSelection-Surface1" name="squareFootageSelection-Surface1" placeholder = "L x W" onchange="calculateTotal()">
-    
-                        <!-- Letting the user select their desired R-Value -->
-                        <label>Type of Surface (Target R-Value)</label>
-                        <select list="r-values" type="number" id="rValueSelection-Surface1" name="rValueSelection-Surface1"
-                            onchange="calculateTotal()">
-                            <option value = 17.5>Wall (R-17.5)</option>
-                            <option value = 59.0>Attic Ceiling (R-59.0)</option>
-                            <option value = 28.5>Cathedral Ceiling (R-28.5)</option>
-                            <option value = 28.5>Floor Over Unheated Area (R-28.5)</option>
-                            <option value = 19.6>Foundation Walls (R-19.6)</option>
-                            <option value = 21.1>Slab on Grade (R-21.2)</option>
-                        </select>
-                    </div>
-                    
-    
-                    <!-- Outputs the Required Depth to the User-->
-                    <div class="advancedResults-Wrapper">
-                        <div class="advancedResultsBlock-Wrapper left">
-                            <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface1-Cost">$0</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface1-Depth">0"</div>
+                <div id="surface1">
+                    <h3 class="areaTag">Area 2</h3>
+                    <div class="advancedInputBlock" id="Surface1">
+
+                        <div class="advancedInputs-Wrapper">
+                            <!-- Letting the user select their desired Sq. Ft -->
+                            <label>Surface Sq.Ft</label>
+                            <input type="number" id="squareFootageSelection-Surface1"
+                                name="squareFootageSelection-Surface1" placeholder="L x W" onchange="calculateTotal()">
+
+                            <!-- Letting the user select their desired R-Value -->
+                            <label>Type of Surface (Target R-Value)</label>
+                            <select list="r-values" type="number" id="rValueSelection-Surface1"
+                                name="rValueSelection-Surface1" onchange="calculateTotal()">
+                                <option value=17.5>Wall (R-17.5)</option>
+                                <option value=59.0>Attic Ceiling (R-59.0)</option>
+                                <option value=28.5>Cathedral Ceiling (R-28.5)</option>
+                                <option value=28.5>Floor Over Unheated Area (R-28.5)</option>
+                                <option value=19.6>Foundation Walls (R-19.6)</option>
+                                <option value=21.1>Slab on Grade (R-21.2)</option>
+                            </select>
                         </div>
-    
-                        <!-- Outputs the Price to the User-->
-                        <div class="advancedResultsBlock-Wrapper">
-                            <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface1-Cost">$0</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface1-Depth">0"</div>
+
+
+                        <!-- Outputs the Required Depth to the User-->
+                        <div class="advancedResults-Wrapper">
+                            <div class="advancedResultsBlock-Wrapper left">
+                                <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface1-Cost">$0</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface1-Depth">0"</div>
+                            </div>
+
+                            <!-- Outputs the Price to the User-->
+                            <div class="advancedResultsBlock-Wrapper">
+                                <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface1-Cost">$0</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface1-Depth">0"</div>
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
 
-            <div id="surface2">
-                <h3 class="areaTag">Area 3</h3>
-                <div class="advancedInputBlock" id="Surface2">
-    
-                    <div class="advancedInputs-Wrapper">
-                        <!-- Letting the user select their desired Sq. Ft -->
-                        <label>Surface Sq.Ft</label>
-                        <input type="number" id="squareFootageSelection-Surface2" name="squareFootageSelection-Surface2" placeholder = "L x W"
-                            onchange="calculateTotal()">
-    
-                        <!-- Letting the user select their desired R-Value -->
-                        <label>Type of Surface (Target R-Value)</label>
-                        <select list="r-values" type="number" id="rValueSelection-Surface2" name="rValueSelection-Surface2"
-                            onchange="calculateTotal()">
-                            <option value = 17.5>Wall (R-17.5)</option>
-                            <option value = 59.0>Attic Ceiling (R-59.0)</option>
-                            <option value = 28.5>Cathedral Ceiling (R-28.5)</option>
-                            <option value = 28.5>Floor Over Unheated Area (R-28.5)</option>
-                            <option value = 19.6>Foundation Walls (R-19.6)</option>
-                            <option value = 21.1>Slab on Grade (R-21.2)</option>
-                        </select>
-                    </div>
-                    
-    
-                    <!-- Outputs the Required Depth to the User-->
-                    <div class="advancedResults-Wrapper">
-                        <div class="advancedResultsBlock-Wrapper left">
-                            <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface2-Cost">$0</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface2-Depth">0"</div>
+                <div id="surface2">
+                    <h3 class="areaTag">Area 3</h3>
+                    <div class="advancedInputBlock" id="Surface2">
+
+                        <div class="advancedInputs-Wrapper">
+                            <!-- Letting the user select their desired Sq. Ft -->
+                            <label>Surface Sq.Ft</label>
+                            <input type="number" id="squareFootageSelection-Surface2"
+                                name="squareFootageSelection-Surface2" placeholder="L x W" onchange="calculateTotal()">
+
+                            <!-- Letting the user select their desired R-Value -->
+                            <label>Type of Surface (Target R-Value)</label>
+                            <select list="r-values" type="number" id="rValueSelection-Surface2"
+                                name="rValueSelection-Surface2" onchange="calculateTotal()">
+                                <option value=17.5>Wall (R-17.5)</option>
+                                <option value=59.0>Attic Ceiling (R-59.0)</option>
+                                <option value=28.5>Cathedral Ceiling (R-28.5)</option>
+                                <option value=28.5>Floor Over Unheated Area (R-28.5)</option>
+                                <option value=19.6>Foundation Walls (R-19.6)</option>
+                                <option value=21.1>Slab on Grade (R-21.2)</option>
+                            </select>
                         </div>
-    
-                        <!-- Outputs the Price to the User-->
-                        <div class="advancedResultsBlock-Wrapper">
-                            <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface2-Cost">$0</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface2-Depth">0"</div>
+
+
+                        <!-- Outputs the Required Depth to the User-->
+                        <div class="advancedResults-Wrapper">
+                            <div class="advancedResultsBlock-Wrapper left">
+                                <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface2-Cost">$0</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface2-Depth">0"</div>
+                            </div>
+
+                            <!-- Outputs the Price to the User-->
+                            <div class="advancedResultsBlock-Wrapper">
+                                <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface2-Cost">$0</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface2-Depth">0"</div>
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
 
-            <div id="surface3">
-                <h3 class="areaTag">Area 4</h3>
-                <div class="advancedInputBlock" id="Surface3">
-    
-                    <div class="advancedInputs-Wrapper">
-                        <!-- Letting the user select their desired Sq. Ft -->
-                        <label>Surface Sq.Ft</label>
-                        <input type="number" id="squareFootageSelection-Surface3" name="squareFootageSelection-Surface3" placeholder = "L x W" onchange="calculateTotal()">
-    
-                        <!-- Letting the user select their desired R-Value -->
-                        <label>Type of Surface (Target R-Value)</label>
-                        <select list="r-values" type="number" id="rValueSelection-Surface3" name="rValueSelection-Surface3"
-                            onchange="calculateTotal()">
-                            <option value = 17.5>Wall (R-17.5)</option>
-                            <option value = 59.0>Attic Ceiling (R-59.0)</option>
-                            <option value = 28.5>Cathedral Ceiling (R-28.5)</option>
-                            <option value = 28.5>Floor Over Unheated Area (R-28.5)</option>
-                            <option value = 19.6>Foundation Walls (R-19.6)</option>
-                            <option value = 21.1>Slab on Grade (R-21.2)</option>
-                        </select>
-                    </div>
-                    
-    
-                    <!-- Outputs the Required Depth to the User-->
-                    <div class="advancedResults-Wrapper">
-                        <div class="advancedResultsBlock-Wrapper left">
-                            <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface3-Cost">$0</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface3-Depth">0"</div>
+                <div id="surface3">
+                    <h3 class="areaTag">Area 4</h3>
+                    <div class="advancedInputBlock" id="Surface3">
+
+                        <div class="advancedInputs-Wrapper">
+                            <!-- Letting the user select their desired Sq. Ft -->
+                            <label>Surface Sq.Ft</label>
+                            <input type="number" id="squareFootageSelection-Surface3"
+                                name="squareFootageSelection-Surface3" placeholder="L x W" onchange="calculateTotal()">
+
+                            <!-- Letting the user select their desired R-Value -->
+                            <label>Type of Surface (Target R-Value)</label>
+                            <select list="r-values" type="number" id="rValueSelection-Surface3"
+                                name="rValueSelection-Surface3" onchange="calculateTotal()">
+                                <option value=17.5>Wall (R-17.5)</option>
+                                <option value=59.0>Attic Ceiling (R-59.0)</option>
+                                <option value=28.5>Cathedral Ceiling (R-28.5)</option>
+                                <option value=28.5>Floor Over Unheated Area (R-28.5)</option>
+                                <option value=19.6>Foundation Walls (R-19.6)</option>
+                                <option value=21.1>Slab on Grade (R-21.2)</option>
+                            </select>
                         </div>
-    
-                        <!-- Outputs the Price to the User-->
-                        <div class="advancedResultsBlock-Wrapper">
-                            <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface3-Cost">$0</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface3-Depth">0"</div>
+
+
+                        <!-- Outputs the Required Depth to the User-->
+                        <div class="advancedResults-Wrapper">
+                            <div class="advancedResultsBlock-Wrapper left">
+                                <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface3-Cost">$0</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface3-Depth">0"</div>
+                            </div>
+
+                            <!-- Outputs the Price to the User-->
+                            <div class="advancedResultsBlock-Wrapper">
+                                <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface3-Cost">$0</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface3-Depth">0"</div>
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
 
-            <div id="surface4">
-                <h3 class="areaTag">Area 5</h3>
-                <div class="advancedInputBlock" id="Surface4">
-    
-                    <div class="advancedInputs-Wrapper">
-                        <!-- Letting the user select their desired Sq. Ft -->
-                        <label>Surface Sq.Ft</label>
-                        <input type="number" id="squareFootageSelection-Surface4" name="squareFootageSelection-Surface4" placeholder = "L x W" nchange="calculateTotal()">
-    
-                        <!-- Letting the user select their desired R-Value -->
-                        <label>Type of Surface (Target R-Value)</label>
-                        <select list="r-values" type="number" id="rValueSelection-Surface4" name="rValueSelection-Surface4"
-                            onchange="calculateTotal()">
-                            <option value = 17.5>Wall (R-17.5)</option>
-                            <option value = 59.0>Attic Ceiling (R-59.0)</option>
-                            <option value = 28.5>Cathedral Ceiling (R-28.5)</option>
-                            <option value = 28.5>Floor Over Unheated Area (R-28.5)</option>
-                            <option value = 19.6>Foundation Walls (R-19.6)</option>
-                            <option value = 21.1>Slab on Grade (R-21.2)</option>
-                        </select>
-                    </div>
-                    
-    
-                    <!-- Outputs the Required Depth to the User-->
-                    <div class="advancedResults-Wrapper">
-                        <div class="advancedResultsBlock-Wrapper left">
-                            <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface4-Cost">$0</div>
-                            <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface4-Depth">0"</div>
+                <div id="surface4">
+                    <h3 class="areaTag">Area 5</h3>
+                    <div class="advancedInputBlock" id="Surface4">
+
+                        <div class="advancedInputs-Wrapper">
+                            <!-- Letting the user select their desired Sq. Ft -->
+                            <label>Surface Sq.Ft</label>
+                            <input type="number" id="squareFootageSelection-Surface4"
+                                name="squareFootageSelection-Surface4" placeholder="L x W" nchange="calculateTotal()">
+
+                            <!-- Letting the user select their desired R-Value -->
+                            <label>Type of Surface (Target R-Value)</label>
+                            <select list="r-values" type="number" id="rValueSelection-Surface4"
+                                name="rValueSelection-Surface4" onchange="calculateTotal()">
+                                <option value=17.5>Wall (R-17.5)</option>
+                                <option value=59.0>Attic Ceiling (R-59.0)</option>
+                                <option value=28.5>Cathedral Ceiling (R-28.5)</option>
+                                <option value=28.5>Floor Over Unheated Area (R-28.5)</option>
+                                <option value=19.6>Foundation Walls (R-19.6)</option>
+                                <option value=21.1>Slab on Grade (R-21.2)</option>
+                            </select>
                         </div>
-    
-                        <!-- Outputs the Price to the User-->
-                        <div class="advancedResultsBlock-Wrapper">
-                            <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface4-Cost">$0</div>
-                            <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface4-Depth">0"</div>
+
+
+                        <!-- Outputs the Required Depth to the User-->
+                        <div class="advancedResults-Wrapper">
+                            <div class="advancedResultsBlock-Wrapper left">
+                                <div class="resultsBlock-SubTitle subtitle">2 lbs Foam:</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface4-Cost">$0</div>
+                                <div class="resultBlock-Value" id="advancedOutputTwoPound-Surface4-Depth">0"</div>
+                            </div>
+
+                            <!-- Outputs the Price to the User-->
+                            <div class="advancedResultsBlock-Wrapper">
+                                <div class="resultsBlock-SubTitle subtitle">1/2 lbs Foam:</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface4-Cost">$0</div>
+                                <div class="resultsBlock-Value" id="advancedOutputHalfPound-Surface4-Depth">0"</div>
+                            </div>
                         </div>
+
                     </div>
-    
                 </div>
-            </div>
 
 
-            <!-- The Second Surface 
+                <!-- The Second Surface 
             <div id="surface1">
                 <h3 class="areaTag">Area 2</h3>
                 <div class="advancedInputBlock">
@@ -344,14 +350,14 @@
             </div>
             -->
 
-            <div class="customButton" id="addSurfaceButton-Wrapper" onclick="addSurface()">
-                <div class="title" id="addSurfaceButton-Test">Add an Area</div>
-                <div id="addSurfaceButtonIcon">+</div>
-            </div>
-        </fieldset>
+                <div class="customButton" id="addSurfaceButton-Wrapper" onclick="addSurface()">
+                    <div class="title" id="addSurfaceButton-Test">Add an Area</div>
+                    <div id="addSurfaceButtonIcon">+</div>
+                </div>
+            </fieldset>
 
 
-        <!-- 
+            <!-- 
     </fieldset>
     <fieldset id="savingsEstimator">
         <legend>Estimate Your Monthly Savings</legend>
@@ -364,130 +370,133 @@
     </fieldset>
     -->
 
-        <!-- Building out the Financing Estimator Section-->
-        <fieldset id="financingEstimator">
+            <!-- Building out the Financing Estimator Section-->
+            <fieldset id="financingEstimator">
 
-            <legend id="financingEstimator-Legend">Step 2). Financing Estimates</legend>
+                <legend id="financingEstimator-Legend">Step 2). Financing Estimates</legend>
 
-            <div class="inputBlock">
-                <label>Choose your Financing Option</label>
-                <select id="financingSelection" name="financingSelection" onchange="calculateTotal()">
-                    <option value="6 Months @ 2%">6 Months - 2%</option>
-                    <option value="12 Months @ 4%">12 Months - 4%</option>
-                    <option value="18 Months @ 6%">18 Months - 6%</option>
-                    <option value="24 Months @ 8%">24 Months - 8%</option>
-                </select>
-            </div>
-
-        </fieldset>
-    </form>
-
-    <!-- Building out the dashboard at the bottom of the screen -->
-    <div class="resultBlock">
-
-
-        <div class="simpleResultBlock advanced" id="estimatorResultsBlock-Simple">
-
-            <div class="resultsBlock-MainTitle title" id="simpleResultBlock-Title" onclick="toggleMoreInfo()">Project Breakdown <span class="clickForMoreText">(Click for More)</span></div>
-
-            <!-- Simple Quick-View Editor -->
-
-            <div class="quickResultBlock-Wrapper moreDetailsHide">
-                <div class="resultsBlock-ValueWrapper">
-                    <div class="resultsBlock-ValueLabel">2lbs:</div>
-                    <div class="resultsBlock-Value" id="simpleResultBlockTwoPoundQuick-Cost">$0</div>
+                <div class="inputBlock">
+                    <label>Choose your Financing Option</label>
+                    <select id="financingSelection" name="financingSelection" onchange="calculateTotal()">
+                        <option value="6 Months @ 2%">6 Months - 2%</option>
+                        <option value="12 Months @ 4%">12 Months - 4%</option>
+                        <option value="18 Months @ 6%">18 Months - 6%</option>
+                        <option value="24 Months @ 8%">24 Months - 8%</option>
+                    </select>
                 </div>
 
-                <div class="resultsBlock-ValueWrapper">
-                    <div class="resultsBlock-ValueLabel">1/2lbs:</div>
-                    <div class="resultsBlock-Value" id="simpleResultBlockHalfPoundQuick-Cost">$0</div>
+            </fieldset>
+        </form>
+
+        <!-- Building out the dashboard at the bottom of the screen -->
+        <div class="resultBlock">
+
+
+            <div class="simpleResultBlock advanced" id="estimatorResultsBlock-Simple">
+
+                <div class="resultsBlock-MainTitle title" id="simpleResultBlock-Title" onclick="toggleMoreInfo()">
+                    Project Breakdown <span class="clickForMoreText">(Click for More)</span></div>
+
+                <!-- Simple Quick-View Editor -->
+
+                <div class="quickResultBlock-Wrapper moreDetailsHide">
+                    <div class="resultsBlock-ValueWrapper">
+                        <div class="resultsBlock-ValueLabel">2lbs:</div>
+                        <div class="resultsBlock-Value" id="simpleResultBlockTwoPoundQuick-Cost">$0</div>
+                    </div>
+
+                    <div class="resultsBlock-ValueWrapper">
+                        <div class="resultsBlock-ValueLabel">1/2lbs:</div>
+                        <div class="resultsBlock-Value" id="simpleResultBlockHalfPoundQuick-Cost">$0</div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- In-Depth Quick-View Editor -->
+                <!-- In-Depth Quick-View Editor -->
 
-            <div class="moreDetailsShow" id="resultsBlock-ByFoamBreakdown-Wrapper">
+                <div class="moreDetailsShow" id="resultsBlock-ByFoamBreakdown-Wrapper">
 
-                <div class="resultsBlock-Wrapper" id="simpleResultTwoPound-Wrapper">
+                    <div class="resultsBlock-Wrapper" id="simpleResultTwoPound-Wrapper">
 
-                    <div class="resultsBlock-FoamWrapper">
-                        <div class="resultsBlock-Title title" id="simpleResultTwoPound-Title">2lb Foam</div>
-                        <!--<div class="resultsBlock-ValueWrapper">
+                        <div class="resultsBlock-FoamWrapper">
+                            <div class="resultsBlock-Title title" id="simpleResultTwoPound-Title">2lb Foam</div>
+                            <!--<div class="resultsBlock-ValueWrapper">
                             <div class="resultsBlock-ValueLabel subtitle">Depth: </div>
                             <div class="resultsBlock-Value subtitle" id="simpleResultTwoPound-Depth">0"</div>
                         </div>-->
 
-                        <div class="resultsBlock-ValueWrapper">
-                            <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
-                            <div class="resultsBlock-Value subtitle" id="simpleResultTwoPound-Cost">$0</div>
+                            <div class="resultsBlock-ValueWrapper">
+                                <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
+                                <div class="resultsBlock-Value subtitle" id="simpleResultTwoPound-Cost">$0</div>
+                            </div>
+
+                            <div class="resultsBlock-ValueWrapper">
+                                <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
+                                <div class="resultsBlock-Value subtitle" id="simpleResultTwoPound-MonthlyPayments">$0
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="resultsBlock-ValueWrapper">
-                            <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
-                            <div class="resultsBlock-Value subtitle" id="simpleResultTwoPound-MonthlyPayments">$0</div>
-                        </div>
+                        <!-- Adding a dividing div -->
+                        <div class="resultsBlock-Divider"></div>
+
+                        <!-- More information on the selected foam. (Initially hidden) -->
+                        <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultTwoPound-MoreInfoList">
+                            <li>Acts as a vapour barrier. No need to install one after application.</li>
+                            <li>Has an R-value per inch of 6.5</li>
+                            <li>Adds structural support to surfaces.</li>
+                        </ul>
                     </div>
 
-                    <!-- Adding a dividing div -->
-                    <div class="resultsBlock-Divider"></div>
+                    <!-- Showing the price and depth of 1/2lb foam, and displaying a "more info" drop-down arrow -->
+                    <div class="resultsBlock-Wrapper" id="simpleResultHalfPound-Wrapper">
+                        <div class="resultsBlock-FoamWrapper">
+                            <div class="resultsBlock-Title title" id="simpleResultHalfPound-Title">1/2lb Foam</div>
 
-                    <!-- More information on the selected foam. (Initially hidden) -->
-                    <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultTwoPound-MoreInfoList">
-                        <li>Acts as a vapour barrier. No need to install one after application.</li>
-                        <li>Has an R-value per inch of 6.5</li>
-                        <li>Adds structural support to surfaces.</li>
-                    </ul>
-                </div>
-
-                <!-- Showing the price and depth of 1/2lb foam, and displaying a "more info" drop-down arrow -->
-                <div class="resultsBlock-Wrapper" id="simpleResultHalfPound-Wrapper">
-                    <div class="resultsBlock-FoamWrapper">
-                        <div class="resultsBlock-Title title" id="simpleResultHalfPound-Title">1/2lb Foam</div>
-                         
-                        <!--<div class="resultsBlock-ValueWrapper">
+                            <!--<div class="resultsBlock-ValueWrapper">
                             <div class="resultsBlock-ValueLabel subtitle">Depth: </div>
                             <div class="resultsBlock-Value subtitle" id="simpleResultHalfPound-Depth">0"</div>
                         </div>-->
 
-                        <div class="resultsBlock-ValueWrapper">
-                            <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
-                            <div class="resultsBlock-Value subtitle" id="simpleResultHalfPound-Cost">$0</div>
+                            <div class="resultsBlock-ValueWrapper">
+                                <div class="resultsBlock-ValueLabel subtitle">Cost: </div>
+                                <div class="resultsBlock-Value subtitle" id="simpleResultHalfPound-Cost">$0</div>
+                            </div>
+
+                            <div class="resultsBlock-ValueWrapper">
+                                <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
+                                <div class="resultsBlock-Value subtitle" id="simpleResultHalfPound-MonthlyPayments">$0
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="resultsBlock-ValueWrapper">
-                            <div class="resultsBlock-ValueLabel subtitle">Monthly: </div>
-                            <div class="resultsBlock-Value subtitle" id="simpleResultHalfPound-MonthlyPayments">$0</div>
+                        <!-- Adding a dividing div -->
+                        <div class="resultsBlock-Divider"></div>
+
+                        <!-- More information on the selected foam. (Initially hidden) -->
+
+                        <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultHalfPound-MoreInfoList">
+                            <li>More affordable solution for areas that don't require vapor barrier.</li>
+                            <li>Better sound absorbtion.</li>
+                            <li>Has an R-value per inch of 3.7</li>
+                        </ul>
+                    </div>
+
+                    <!-- The "More Info" Arrow -->
+                    <div id="simpleResultsBlock-MoreInfoButton" onclick="expandMoreInfo()">
+                        <div id="simpleResultsBlock-MoreInfoWrapperContent">
+                            <div id="simpleResultsBlock-MoreInfoTitle">More Info</div>
+                            <div id="simpleResultsBlock-MoreInfoArrow"></div>
                         </div>
                     </div>
-
-                    <!-- Adding a dividing div -->
-                    <div class="resultsBlock-Divider"></div>
-
-                    <!-- More information on the selected foam. (Initially hidden) -->
-
-                    <ul class="resultsBlock-MoreInfoList moreDetailsShow" id="simpleResultHalfPound-MoreInfoList">
-                        <li>More affordable solution for areas that don't require vapor barrier.</li>
-                        <li>Better sound absorbtion.</li>
-                        <li>Has an R-value per inch of 3.7</li>
-                    </ul>
                 </div>
 
-                <!-- The "More Info" Arrow -->
-                <div id="simpleResultsBlock-MoreInfoButton" onclick="expandMoreInfo()">
-                    <div id="simpleResultsBlock-MoreInfoWrapperContent">
-                        <div id="simpleResultsBlock-MoreInfoTitle">More Info</div>
-                        <div id="simpleResultsBlock-MoreInfoArrow"></div>
-                    </div>
-                </div>
+
+
+
+
             </div>
 
-
-
-
-
-        </div>
-
-        <!-- Bottom-of-Page readout for the advanced estimator 
+            <!-- Bottom-of-Page readout for the advanced estimator 
         <div class="advancedResultBlock simple" id="estimatorResultsBlock-Advanced">
 
             
@@ -506,24 +515,27 @@
         </div>
         -->
 
-        <div class="moreDetailsShow" id="sendToInstaFoamButton-Wrapper">
-            <div class="divider moreDetailsShow"></div>
-            <div class="subtitle" id="sendToInstaFoamButton-Title">Email Yourself a Copy</div>
-        </div>
-        
-        <div class="moreDetailsShow">
+            <div class="moreDetailsShow" id="sendToInstaFoamButton-Wrapper">
+                <div class="divider moreDetailsShow"></div>
+                <div class="subtitle" id="sendToInstaFoamButton-Title">Email Yourself a Copy</div>
+            </div>
 
-            <!-- Building out the "Get it Emailed to You" submission form-->
-            <form action="" class="moreDetailsShow" id="emailCollection-Form">
-                <input id="emailCollection-Input" type="email" placeholder="your@email.com">
-                <div id="emailCollection-Button" onclick="submitEmail()">SEND</div>
-                <div id="emailCollection-CheckboxWrapper"><input type="checkbox" id="emailCollection-WantsEstimate" name="emailCollection-WantsEstimate" value="true">Send to InstaFoam for a free, in-person quote?</div>
-            
-            
-            
-            </form>
-        </div>
+            <div class="moreDetailsShow">
 
+                <!-- Building out the "Get it Emailed to You" submission form-->
+                <form action="" class="moreDetailsShow" id="emailCollection-Form">
+                    <input id="emailCollection-Input" type="email" placeholder="your@email.com">
+                    <div id="emailCollection-Button" onclick="submitEmail()">SEND</div>
+                    <div id="emailCollection-CheckboxWrapper"><input type="checkbox" id="emailCollection-WantsEstimate"
+                            name="emailCollection-WantsEstimate" value="true">Send to InstaFoam for a free, in-person
+                        quote?</div>
+
+
+
+                </form>
+            </div>
+
+        </div>
     </div>
 
 </body>

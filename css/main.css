@@ -1,8 +1,13 @@
 body {
   margin: 0px;
   padding: 0px;
+  overflow: scroll;
   background: white;
   font-family: 'Muli', sans-serif; }
+
+#main-wrapper {
+  max-height: 91vh;
+  overflow: scroll; }
 
 fieldset {
   padding: 0px;
