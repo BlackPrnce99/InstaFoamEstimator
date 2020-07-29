@@ -7,7 +7,7 @@ body {
 
 #main-wrapper {
   position: absolute;
-  max-height: 91vh;
+  max-height: 100vh;
   overflow: scroll; }
 
 fieldset {
