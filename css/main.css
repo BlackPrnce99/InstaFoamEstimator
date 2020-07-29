@@ -6,6 +6,7 @@ body {
   font-family: 'Muli', sans-serif; }
 
 #main-wrapper {
+  position: absolute;
   max-height: 91vh;
   overflow: scroll; }
 
@@ -237,7 +238,7 @@ ul {
 
 .resultBlock {
   position: fixed;
-  bottom: 65px;
+  bottom: 9vh;
   width: 100%;
   max-width: 490px;
   padding-top: 10px;
