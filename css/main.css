@@ -8,9 +8,30 @@ body {
 
 #main-wrapper {
   position: absolute;
-  max-height: 100vh;
-  overflow: scroll; }
+  max-height: auto; }
 
+/*
+@media (min-width: 479px) {
+    #inputAreaWrapper{
+        display: grid;
+        width: auto;
+
+        grid-template-columns: 360px 360px;
+        grid-template-rows: 50% 50%;
+        column-gap: 30px;
+
+        background-color: teal;
+    }
+
+    .resultBlock {
+
+        padding-top: 30px;
+        
+    }
+
+
+}
+*/
 fieldset {
   padding: 0px;
   margin: 0px;
@@ -238,7 +259,7 @@ ul {
   border-radius: 15px 15px 0px 0px; }
 
 .resultBlock {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   width: 100%;
   max-width: 490px;
